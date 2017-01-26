@@ -11,7 +11,7 @@ var Bar = require('./models/bar');
 var app = express();
 mongoose.Promise = global.Promise;
 
-app.set("port", process.env.PORT || 3030);
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -128,6 +128,6 @@ router.route('/:location/bars/:bar_id')
 
 app.use('/api', router);
 
-app.listen(app.get("port"), function() {
-  console.log("Server started on port " + app.get("port"));
+app.listen(port, () => {
+  console.log(`Started on port ${port}`);
 });
