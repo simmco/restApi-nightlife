@@ -89,7 +89,7 @@ router.route('/:location/bars/:bar_id')
         if (err)
           res.send(err);
 
-        bar.visitors.push(req.user || '');
+        bar.visitors = bar.visitors + 1;
         bar.save(function(err) {
           if (err)
             res.send(err);

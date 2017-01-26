@@ -6,7 +6,7 @@ var BarSchema  = new Schema({
     name: String,
     img: String,
     snippet: String,
-    visitors: [String]
+    visitors: Number
 });
 
 module.exports = mongoose.model('Bar', BarSchema);
